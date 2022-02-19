@@ -11,6 +11,15 @@ public class CashRegister {
 		double moneyReceived = 0;
 		double changeOwedAfterPurchase = 0;
 		double customerAmountOwed = 0;
+		double numberOfTwenties = 0;
+		double numberOfTens = 0;
+		double numberOfFives = 0;
+		double numberOfOnes = 0;
+		double numberOfQuarters = 0;
+		double numberOfDimes = 0;
+		double numberOfNickels = 0;
+		double numberOfPennies = 0;
+		
 		System.out.println("What is the price of the item?");
 		itemCost = kb.nextDouble();
 		
@@ -25,18 +34,41 @@ public class CashRegister {
 		}
 			
 		else if(itemCost > moneyReceived) {
-			
 			customerAmountOwed = itemCost - moneyReceived;
 			System.out.println("The customer still owes " + customerAmountOwed);
+		}
+		
+		else if(moneyReceived > itemCost) {
+			changeOwedAfterPurchase = moneyReceived - itemCost;
+		}
 			
+			System.out.println("The customers is owed " + changeOwedAfterPurchase);
+			numberOfTwenties = (int)changeOwedAfterPurchase / 20;
+	
 			
-			}
-	
-	
+			System.out.println("The customer is owed " + numberOfTwenties + " $20 dollar bills");
+		
+			if(changeOwedAfterPurchase % 20 > 0) {
+				changeOwedAfterPurchase = changeOwedAfterPurchase - (numberOfTwenties * 20);
+		}
+			numberOfTens = changeOwedAfterPurchase / 10;
+			
+			System.out.println("The customer is owed " + numberOfTens + " $10 dollar bills");
+			
+			System.out.println(changeOwedAfterPurchase);
+		
+		
+			
 	}
+		
+}
+		
+		
+		
+		
+	
 	
 
-}
 
 /*
  * User Story #1 The user is prompted asking for the price of the item.
