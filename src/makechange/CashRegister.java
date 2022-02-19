@@ -10,15 +10,27 @@ public class CashRegister {
 		double itemCost = 0;
 		double moneyReceived = 0;
 		double changeOwedAfterPurchase = 0;
-		
+		double customerAmountOwed = 0;
 		System.out.println("What is the price of the item?");
 		itemCost = kb.nextDouble();
 		
 		System.out.println("How much money has the customer given you?");
 		moneyReceived = kb.nextDouble();
 		
-		System.out.println(itemCost + "  " + moneyReceived);
-		
+		changeOwedAfterPurchase = itemCost - moneyReceived;
+		 
+		if (itemCost == moneyReceived) {
+			
+			System.out.println("The customer provided the exact amount, no change needed!");
+		}
+			
+		else if(itemCost > moneyReceived) {
+			
+			customerAmountOwed = itemCost - moneyReceived;
+			System.out.println("The customer still owes " + customerAmountOwed);
+			
+			
+			}
 	
 	
 	}
