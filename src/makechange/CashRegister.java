@@ -36,6 +36,7 @@ public class CashRegister {
 		if(itemCost > moneyReceived) {
 			customerAmountOwed = itemCost - moneyReceived;
 			System.out.println("The customer still owes " + customerAmountOwed);
+			customerAmountOwed = 0;
 			
 		}
 		
@@ -45,7 +46,6 @@ public class CashRegister {
 			numberOfTwenties = (int)changeOwedAfterPurchase / 20;
 			System.out.println("The customer is owed " + (int)numberOfTwenties + " $20 dollar bill(s)");
 			
-		}
 	
 			
 		
@@ -93,6 +93,7 @@ public class CashRegister {
 			System.out.println("The customer is owed " + (int)numberOfPennies + " pennies");
 		}
 			
+		}
 	}
 		
 }
