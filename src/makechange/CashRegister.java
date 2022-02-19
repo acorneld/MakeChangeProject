@@ -12,7 +12,17 @@ public class CashRegister {
 		double changeOwedAfterPurchase = 0;
 		
 		System.out.println("What is the price of the item?");
+		itemCost = kb.nextDouble();
+		
+		System.out.println("How much money has the customer given you?");
+		moneyReceived = kb.nextDouble();
+		
+		System.out.println(itemCost + "  " + moneyReceived);
+		
+	
+	
 	}
+	
 
 }
 
