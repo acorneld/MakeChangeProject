@@ -33,31 +33,52 @@ public class CashRegister {
 			System.out.println("The customer provided the exact amount, no change needed!");
 		}
 			
-		else if(itemCost > moneyReceived) {
+		if(itemCost > moneyReceived) {
 			customerAmountOwed = itemCost - moneyReceived;
 			System.out.println("The customer still owes " + customerAmountOwed);
+			
 		}
 		
-		else if(moneyReceived > itemCost) {
+		if(moneyReceived > itemCost) {
 			changeOwedAfterPurchase = moneyReceived - itemCost;
-		}
-			
-			System.out.println("The customers is owed " + changeOwedAfterPurchase);
+			System.out.println("The customer is owed " + changeOwedAfterPurchase);
 			numberOfTwenties = (int)changeOwedAfterPurchase / 20;
+			System.out.println("The customer is owed " + (int)numberOfTwenties + " $20 dollar bill(s)");
+			
+		}
 	
 			
-			System.out.println("The customer is owed " + numberOfTwenties + " $20 dollar bills");
 		
-			if(changeOwedAfterPurchase % 20 > 0) {
-				changeOwedAfterPurchase = changeOwedAfterPurchase - (numberOfTwenties * 20);
+		if(changeOwedAfterPurchase % 20 > 0) {
+			changeOwedAfterPurchase = changeOwedAfterPurchase - (numberOfTwenties * 20);
+			numberOfTens = (int)changeOwedAfterPurchase / 10;
+			System.out.println("The customer is owed " + (int)numberOfTens + " $10 dollar bill(s)");
 		}
-			numberOfTens = changeOwedAfterPurchase / 10;
 			
-			System.out.println("The customer is owed " + numberOfTens + " $10 dollar bills");
 			
-			System.out.println(changeOwedAfterPurchase);
+		if(changeOwedAfterPurchase % 10 > 0) {
+			changeOwedAfterPurchase = changeOwedAfterPurchase - (numberOfTens * 10);
+			numberOfFives = (int)changeOwedAfterPurchase / 5;
+			System.out.println("The customer is owed " + (int)numberOfFives + " $5 dollar bill(s)");
+		}
 		
+		if(changeOwedAfterPurchase % 5 > 0) {
+			changeOwedAfterPurchase = changeOwedAfterPurchase - (numberOfFives * 5);
+			numberOfOnes = (int)changeOwedAfterPurchase / 1;
+			System.out.println("The customer is owed " + (int)numberOfOnes + " $1 dollar bill(s)");
+		}
 		
+		if(changeOwedAfterPurchase % 1 > 0) {
+			changeOwedAfterPurchase = changeOwedAfterPurchase - (numberOfOnes * 1);
+			numberOfQuarters = changeOwedAfterPurchase / 0.25;
+			System.out.println("The customer is owed " + (int)numberOfQuarters + " quarters");
+		}
+		
+		if(changeOwedAfterPurchase % 0.25 > 0) {
+		
+		}
+		
+		System.out.println(changeOwedAfterPurchase);
 			
 	}
 		
