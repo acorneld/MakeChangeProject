@@ -15,10 +15,10 @@ public class CashRegister {
 		double numberOfTens = 0;
 		double numberOfFives = 0;
 		double numberOfOnes = 0;
-		double numberOfQuarters = 0;
-		double numberOfDimes = 0;
-		double numberOfNickels = 0;
-		double numberOfPennies = 0;
+		double numberOfQuarters = 1;
+		double numberOfDimes = 1;
+		double numberOfNickels = 1;
+		double numberOfPennies = 1;
 		
 		System.out.println("What is the price of the item?");
 		itemCost = kb.nextDouble();
@@ -70,15 +70,28 @@ public class CashRegister {
 		
 		if(changeOwedAfterPurchase % 1 > 0) {
 			changeOwedAfterPurchase = changeOwedAfterPurchase - (numberOfOnes * 1);
-			numberOfQuarters = changeOwedAfterPurchase / 0.25;
+			changeOwedAfterPurchase += 0.005;
+			changeOwedAfterPurchase = (int)(changeOwedAfterPurchase * 100);
+			numberOfQuarters = changeOwedAfterPurchase / 25;
+			
 			System.out.println("The customer is owed " + (int)numberOfQuarters + " quarters");
 		}
-		
-		if(changeOwedAfterPurchase % 0.25 > 0) {
-		
+		if(changeOwedAfterPurchase % 25 > 0) {
+			changeOwedAfterPurchase = changeOwedAfterPurchase - ((int)numberOfQuarters * 25);
+			numberOfDimes = changeOwedAfterPurchase / 10;
+			System.out.println("The customer is owed " + (int)numberOfDimes + " dimes");
 		}
 		
-		System.out.println(changeOwedAfterPurchase);
+		if(changeOwedAfterPurchase % 10 > 0) {
+			changeOwedAfterPurchase = changeOwedAfterPurchase - ((int)numberOfDimes * 10);
+			numberOfNickels = changeOwedAfterPurchase / 5;
+			System.out.println("The customer is owed " + (int)numberOfNickels + " nickels");
+		}
+		if(changeOwedAfterPurchase % 5 > 0) {
+			changeOwedAfterPurchase = changeOwedAfterPurchase - ((int)numberOfNickels * 5);
+			numberOfPennies = changeOwedAfterPurchase / 1;
+			System.out.println("The customer is owed " + (int)numberOfPennies + " pennies");
+		}
 			
 	}
 		
