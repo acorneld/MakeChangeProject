@@ -106,7 +106,7 @@ public class CashRegister {
 
 
 /*
- * User Story #1 The user is prompted asking for the price of the item.
+ * User Story #1 The user is prompted asking for the price of the item..
  * 
  * User Story #2 The user is then prompted asking how much money was tendered by
  * the customer.
